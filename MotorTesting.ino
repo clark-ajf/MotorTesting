@@ -102,10 +102,7 @@ void loop () {
             Serial.print(motorcontrol[MOTOR_RIGHT]);
             Serial.print(" - Direction: ");
             Serial.println(motorcontrol[DIRECTION]);
-            publish_joystick_sensor("RADIO AVAILABLE");
-            publish_joystick_sensor(motorcontrol[DIRECTION]);
         } else {
-            publish_joystick_sensor("RADIO NOT AVAILABLE");
             Serial.print("Not Connected");
         }
     }
