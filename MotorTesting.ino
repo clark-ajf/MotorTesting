@@ -24,11 +24,11 @@ uint8_t motorcontrol[3];
 #define MOTOR_LEFT 0
 
 //nRF24L01 Pins
-#define CE_PIN = 53
-#define SCK_PIN = 52
-#define MISO_PIN = 50
-#define CSN_PIN  = 49
-#define MOSI_PIN = 51
+#define CE_PIN 53
+#define SCK_PIN 52
+#define MISO_PIN 50
+#define CSN_PIN 49
+#define MOSI_PIN 51
 
 RF24 radio(CE_PIN, CSN_PIN); // CE, CSN
 const byte address[6] = "00001";
