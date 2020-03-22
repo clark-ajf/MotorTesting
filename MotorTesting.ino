@@ -94,16 +94,18 @@ void setup ( ) {
 void loop () {
     if(joystick_enabled){
         if (radio.available()) {
-            radio.read(&motorcontrol, sizeof(motorcontrol));
-            drive(motorcontrol[DIRECTION], motorcontrol[MOTOR_RIGHT], motorcontrol[MOTOR_LEFT]);
-            Serial.print("Motor LEFT: ");
-            Serial.print(motorcontrol[MOTOR_LEFT]);
-            Serial.print(" - Motor RIGHT: ");
-            Serial.print(motorcontrol[MOTOR_RIGHT]);
-            Serial.print(" - Direction: ");
-            Serial.println(motorcontrol[DIRECTION]);
+            while(radio.available()){
+                radio.read(&motorcontrol, sizeof(motorcontrol));
+                drive(motorcontrol[DIRECTION], motorcontrol[MOTOR_RIGHT], motorcontrol[MOTOR_LEFT]);
+                Serial.print("Motor LEFT: ");
+                Serial.print(motorcontrol[MOTOR_LEFT]);
+                Serial.print(" - Motor RIGHT: ");
+                Serial.print(motorcontrol[MOTOR_RIGHT]);
+                Serial.print(" - Direction: ");
+                Serial.println(motorcontrol[DIRECTION]);
+            }
         } else {
-            Serial.print("Not Connected");
+            Serial.println("Not Connected");
         }
     }
     
