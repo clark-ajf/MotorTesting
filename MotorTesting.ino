@@ -50,7 +50,7 @@ void joystickCallback(const std_msgs::String& joystick_command_msg) {
     } else if (strcmp(joystick_command_msg.data,"FORWARD") == 0 && !joystick_enabled) {
         drive(0, 100, 100);
     } else if (strcmp(joystick_command_msg.data,"STOP") == 0 && !joystick_enabled) {
-        stay(); 
+        stop(); 
     } else if (strcmp(joystick_command_msg.data,"DISABLE_JOYSTICK") == 0) {
         joystick_enabled = false;
     } else if (strcmp(joystick_command_msg.data,"ENABLE_JOYSTICK") == 0) {
