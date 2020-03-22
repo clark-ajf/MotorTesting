@@ -64,8 +64,8 @@ ros::Publisher pub_joystick("joystick_sensor", &str_msg);
 ros::Subscriber<std_msgs::String> sub_joystick("joystick_commands", joystickCallback);
 
 void setup ( ) {
-  //Starting the serial communication at 9600 baud rate
-  Serial.begin (9600);
+  //Starting the serial communication at 57600 baud rate
+  Serial.begin (57600);
 
   // Initializing Radio Receiver
   radio.begin();
@@ -108,7 +108,6 @@ void loop () {
             Serial.println("Not Connected");
         }
     }
-    
     nh.spinOnce();    
 }
 
